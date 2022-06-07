@@ -1,0 +1,53 @@
+.site-side-bar
+  background-image: linear-gradient(315deg, #282e35 0%, #363f4a 74%)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 14
+  height: calc(100vh - 82px)
+  width: var(--side-bar-width)
+  margin-top: var(--header-size)
+
+  .site-side-bar__nav
+    display: flex
+    flex-direction: column
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3)
+
+    .site-side-bar__item
+      position: relative
+      height: 64px
+      display: flex
+      align-items: center
+      font-size: 24px
+      color: white
+      background-color: #485461
+      background-image: linear-gradient(315deg, #485461 0%, #3c4652 74%)
+      border-bottom: 1px solid #313030
+      padding-left: 18px
+      z-index: 100
+
+      .site-side-bar__item-content-wrapper
+        display: none
+        position: absolute
+        top: 0
+        right: 0
+        margin-right: calc(var(--side-bar-width) * -1)
+        width: var(--side-bar-width)
+        border-top: 1px solid #313030
+        border-right: 1px solid #313030
+        margin-top: -1px
+
+      &:hover
+        background-image: linear-gradient(315deg, #617082 0%, #525d6b 74%)
+        
+        .site-side-bar__item-content-wrapper
+          display: block
+
+    .site-side-bar__item--selected
+      background-image: linear-gradient(315deg, #615448 0%, #524c3c 74%)
+
+      &:hover
+        background-image: linear-gradient(315deg, #796959 0%, #615946 74%)
+        
+        .site-side-bar__item-content-wrapper
+          display: block

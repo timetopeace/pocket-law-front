@@ -1,0 +1,43 @@
+.ui-pagination
+  display: flex
+  justify-content: center
+  borderAttributes = 1px solid lightgray
+
+  .ui-pagination__control
+    display: flex
+    justify-content: center
+    align-items: center
+    border-top: borderAttributes
+    border-right: borderAttributes
+    border-bottom: borderAttributes
+    width: 32px
+    height: 32px
+    font-weight: 700
+    cursor: pointer
+    color: #66f
+
+    &--currentPage
+      background: lightgray
+      color: gray
+  
+  .ui-pagination__label
+    display: flex
+    align-items: center
+    margin-right: 10px
+
+  .ui-pagination__items-per-page
+    width: 24px
+    margin-right: 10px
+    padding: 0px 14px
+    height: 32px
+
+  .ui-pagination__control-normal
+    border: borderAttributes
+    border-radius: 5px
+
+  .ui-pagination__control-previous
+    border-radius: 5px 0 0 5px
+    border-left: borderAttributes
+
+  .ui-pagination__control-next
+    border-radius: 0 5px 5px 0

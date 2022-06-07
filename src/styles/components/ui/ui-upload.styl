@@ -1,0 +1,39 @@
+.ui-upload
+  display: flex
+  align-items: center
+  width: 520px
+
+  .ui-upload__label
+    width: 172px
+    min-width: 172px
+
+    .ui-upload__input
+      position: absolute
+      opacity: 0
+      overflow: hidden
+      width: 0.1px
+      height: 0.1px
+  
+  .ui-upload__message
+    font-size: 16px
+    margin-left: 8px
+    max-width: 300px
+    overflow-wrap: break-word
+    color: blue
+  
+  .ui-upload__preview
+    position: fixed
+    top: 0
+    left: 50%
+    width: 200px
+    max-height: 500px
+    opacity: 0
+    fancy-border()
+    transition: opacity .2s
+    pointer-events: none
+    z-index: 10000
+
+  .ui-image__preview-shown
+    opacity: 1
+    transition: opacity .2s
+    pointer-events: all

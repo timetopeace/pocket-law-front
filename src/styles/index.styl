@@ -1,0 +1,295 @@
+@import './mixins'
+@import './views/**/**'
+@import './components/**/**'
+@import './vars'
+@import './normalize'
+//@import './fonts'
+@import './transitions'
+@import './templates/**'
+
+body
+  font-family Rubik, sans-serif, Helvetica
+  background-color: var(--main-background-color)
+  height: 100vh
+  
+  #app
+    position: relative
+    display flex
+    width: 100%
+    min-height: 100vh
+    box-sizing: border-box
+
+    .module-app
+      height: 100%
+
+  a
+    cursor: pointer
+
+  h1
+    font-size: 39px
+    font-weight: bold
+    margin: 0
+    white-space: pre-line
+
+    @media screen and (max-width: 575px)
+      font-size: 25px
+
+  h2
+    font-size: 32px
+    font-weight: bold
+    margin: 0
+
+    @media screen and (max-width: 575px)
+      font-size: 20px
+
+  h3
+    font-size: 24px
+    font-weight: 500
+    margin: 0
+
+    @media screen and (max-width: 575px)
+      font-size: 18px
+
+  h4
+    font-size: 20px
+    font-weight: 500
+    margin: 0
+
+    @media screen and (max-width: 575px)
+      font-size: 16px
+
+  .list-grid
+    margin-top: 30px
+    display: flex
+    flex-wrap: wrap
+    gap: 25px
+
+  .list-table
+    width: 100%
+    font-size: 20px
+    border-radius: 10px
+
+    thead
+      tr
+        color: white
+        height: 60px
+
+        th
+          background: #434e5a
+          position: sticky
+          top: var(--header-size)
+          padding: 10px
+          z-index: 10
+          font-size: 1.1vw
+
+        .list-table__th-small-width
+          width: 120px
+
+    tbody
+      tr
+        background: #f8f6ff
+        height: 47px
+
+        th
+          font-weight: 200
+          padding: 5px
+          max-width: 500px
+          word-break: break-word
+          overflow-wrap: anywhere
+          font-size: 1.1vw
+
+          a
+            width: 100%
+            height: 100%
+            display: block
+            color: inherit
+            padding: 10px 0
+
+          input
+            width: 100%
+
+          borderNormal = 1px solid #ccc !important
+          .list-table__input-text
+            border-radius: 0
+            border: none !important
+            border-bottom: borderNormal
+            box-shadow: none
+            margin-bottom: -1px
+            width: calc(100% - 42px)
+            background: transparent !important
+
+            &:disabled
+              border-bottom: none !important
+
+          .list-table__delete-button
+            display: flex
+            justify-content: center
+            align-items: center
+            min-width: 0
+            width: 46px
+            height: 46px
+            padding: 0
+            border-bottom: borderNormal
+            border-radius: 0
+            margin-bottom: -1px
+            background: var(--red-button)
+        
+        .list-table__th-nowrap
+          word-break: normal
+          overflow-wrap: normal
+
+        &:nth-child(even)
+          background: #e9e7ef
+      
+      tr.list-table__highlighted
+        background:#fcf9e1
+
+        &:nth-child(even)
+          background: #fcf6c0
+
+  .list-table.list-table--clickable
+    tbody
+      tr
+        cursor: pointer
+
+        &:hover
+          background: #ccc8d8 !important
+  
+  .close
+    position: absolute
+    right: 18px
+    top: 18px
+    width: 24px
+    height: 24px
+    opacity: 0.3
+
+  .close:hover
+    opacity: 1
+
+  .close:before, .close:after
+    position: absolute
+    left: 11px
+    content: ' '
+    height: 23px
+    width: 2px
+    background-color: #fff
+
+  .close:before
+    transform: rotate(45deg)
+
+  .close:after
+    transform: rotate(-45deg)
+
+  .index-1
+    z-index: 1
+
+  .index-2
+    z-index: 2
+  
+  .d-flex
+    display: flex
+  
+  .d-justify-between
+    display: flex
+    justify-content: space-between
+  
+  .d-justify-center
+    display: flex
+    justify-content: center
+  
+  .d-justify-start
+    display: flex
+    justify-content: flex-start
+
+  .d-align-center
+    display: flex
+    align-items: center
+  
+  .d-flex-column
+    display: flex
+    flex-direction: column
+
+  for num in (0..10)
+    .m-{(num * 5)}
+      margin: (num * 5) + 0px !important
+
+    .mr-{(num * 5)}
+      margin-right: (num * 5) + 0px !important
+      
+    .mt-{(num * 5)}
+      margin-top: (num * 5) + 0px !important
+
+    .ml-{(num * 5)}
+      margin-left: (num * 5) + 0px !important
+
+    .mb-{(num * 5)}
+      margin-bottom: (num * 5) + 0px !important
+
+  .clickable
+    cursor: pointer
+  
+  .w-auto
+    width: auto
+  
+  .inline-block
+    display: inline-block
+
+  .loading
+    display: inline-block
+    position: relative
+    width: 100%
+    height: 80%
+    min-height: 64px
+
+    &:after
+      position: absolute
+      size = 48px
+      top: "calc(50% - %s / 2 - 16px)" % (size)
+      left: "calc(50% - %s / 2 - 16px)" % (size)
+      content: " "
+      display: block
+      width: size
+      height: size
+      margin: 8px
+      border-radius: 50%
+      border: 6px solid #444
+      border-color: #444 transparent #444 transparent
+      animation: loading 1.2s linear infinite
+
+  @keyframes loading
+    0%
+      transform: rotate(0deg)
+
+    100%
+      transform: rotate(360deg)
+  
+  .loading--bright
+    &:after
+      border-color: #eee transparent #eee transparent
+  
+  .loading--smaller
+    &:after
+      size = 32px
+      width: size
+      height: size
+      top: "calc(50% - %s / 2 - 16px)" % (size)
+      left: "calc(50% - %s / 2 - 16px)" % (size)
+
+[title]
+  border-bottom: 1px dotted gray
+
+/* width */
+::-webkit-scrollbar
+  width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #f1f1f1
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555

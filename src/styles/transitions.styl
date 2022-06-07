@@ -1,0 +1,77 @@
+// swipe
+.swipe-enter-active, .swipe-leave-active
+  transition: opacity .35s, transform .35s
+  will-change: transform, opacity
+
+.swipe-enter
+  opacity: 0
+  transform: translateX(30%)
+
+.swipe-leave-to
+  opacity: 0
+  transform: translateX(-30%)
+
+// swipe-left
+.swipe-left-leave-active
+  position: absolute
+
+.swipe-left-enter-active, .swipe-left-leave-active
+  transition: opacity .35s, transform .35s
+  will-change: transform, opacity
+
+.swipe-left-enter
+  opacity: 0
+  transform: translateX(30%)
+
+.swipe-left-leave-to
+  opacity: 0
+  transform: translateX(-30%)
+
+// swipe-up
+.swipe-up-enter-active
+  position: absolute
+  height: 0
+  overflow: hidden
+
+.swipe-up-enter-active, .swipe-up-leave-active
+  transition: opacity .35s, transform .35s
+  will-change: transform, opacity
+
+.swipe-up-enter
+  opacity: 0
+  transform: translateY(10%)
+
+.swipe-up-leave-to
+  opacity: 0
+  transform: translateY(-10%)
+
+// fade
+.fade-enter-active, .fade-leave-active
+  transition: opacity .35s ease
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+// fade-quick
+.fade-quick-enter-active, .fade-quick-leave-active
+  transition: opacity .15s ease
+
+.fade-quick-enter, .fade-quick-leave-to
+  opacity: 0
+
+// fade-list
+.fade-list-leave-active
+  width: 0
+  height: 0
+  padding: 0
+  overflow: hidden
+
+.fade-list-enter
+  opacity: 0
+
+.fade-list-enter-active
+  transition: opacity .5s
+
+.fade-list-enter-to
+  opacity: 1
+

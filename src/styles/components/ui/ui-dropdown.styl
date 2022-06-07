@@ -1,0 +1,68 @@
+.ui-dropdown
+  position: relative
+  cursor: pointer
+  max-width: 212px
+
+  .ui-input
+    cursor: pointer
+    pointer-events: none
+
+  &:focus, &:focus-within
+    .ui-dropdown__options
+      display: block
+      pointer-events: all
+
+    &:after
+      transform: rotate(225deg) translate(-2px, -2px)
+
+  &:after
+    content: ''
+    position: absolute
+    width: 7px
+    height: 7px
+    border-bottom 2px solid #aaa
+    border-right 2px solid #aaa
+    border-bottom-right-radius: 1px
+    transform rotate(45deg) translate(0px, 0px)
+    transition: transform .35s
+    top: calc(50% - 5px)
+    right: 15px
+    box-sizing border-box
+    pointer-events: none
+
+  .ui-dropdown__options
+    display: none
+    position: absolute
+    top: calc(100% - 1px)
+    overflow: auto
+    font-size: 14px
+    line-height: 1.4
+    color: #555
+    background-color: #fff
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-shadow: inset 0 2px 1px rgba(0,0,0,.075)
+    z-index: 11
+    max-height: 250px
+
+    .ui-dropdown__option
+      display: flex
+      align-items: center
+      justify-content: space-between
+      min-height: 20px
+      cursor: pointer
+      padding: 8px
+
+      &:hover
+        background: #ccc
+
+      p
+        width: max-content
+    
+  .ui-dropdown--searchable
+    pointer-events: all
+    cursor: auto
+
+.ui-dropdown--disabled
+  pointer-events: none
+  cursor: not-allowed

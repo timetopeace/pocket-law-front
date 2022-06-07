@@ -1,0 +1,54 @@
+.ui-tab-list
+  .ui-tab-list__tab-wrapper
+    display: flex
+    margin-bottom: 20px
+    margin-left: -15px
+
+    .ui-tab-list__item
+      display: flex
+
+      .ui-tab-list__tab
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #777
+        border-radius: 50%
+        cursor: pointer
+        width: 42px
+        height: 42px
+        color: white
+        font-weight: 800
+        box-shadow: inset 0 3px 6px rgba(0,0,0,0.1)
+
+        &:hover
+          opacity: 0.8
+
+      .ui-tab-list__gap
+        width: 15px
+
+      .ui-tab-list__gap-active
+        background-image: url('../assets/caret.png')
+        background-size: cover
+        background-position: center
+      
+      .ui-tab-list__plus
+        background: green
+
+        &:hover
+          opacity: 0.8
+      
+      .ui-tab-list__tab-active
+        background: #aaa
+  
+  .ui-tab-list__remove-button
+    background: red
+    max-width: 172px
+
+  .ui-tab-list__warning
+    color: #ffc107
+    opacity: 0.8
+    font-style: italic
+  
+  .ui-tab-list__tip
+    color: gray
+    font-style: italic

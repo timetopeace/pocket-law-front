@@ -1,0 +1,29 @@
+.ui-modal
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgba(0,0,0,0)
+  pointer-events: none
+  z-index: 1000
+  transition: background .2s
+
+  .ui-modal__content
+    padding: 40px
+    opacity: 0
+    background: white
+    border-radius: 5px
+    overflow: hidden
+
+  &--shown
+    background: rgba(0,0,0,0.4)
+    pointer-events: all
+    transition: background .2s
+
+    .ui-modal__content
+      opacity: 1
+      transition: opacity .2s

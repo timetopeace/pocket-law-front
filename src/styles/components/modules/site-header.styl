@@ -1,0 +1,26 @@
+.site-header
+  position: fixed
+  top: 0
+  left: 0
+  width: calc(100% - 36px)
+  height: calc(var(--header-size) - 1px)
+  background-image: var(--main-gray-gradient)
+  border-bottom: 1px solid #313030
+  display: flex
+  align-items: center
+  color: white
+  padding: 0 18px
+  display: flex
+  justify-content: space-between
+  z-index: 15
+  
+  .site-header__left
+    .site-header__logo
+      color: white
+      font-size: 28px
+
+  .site-header__right
+    .site-header__logout
+      color: white
+      text-decoration: underline
+      font-size: 24px
